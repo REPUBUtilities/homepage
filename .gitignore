@@ -1,0 +1,27 @@
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.sw?
+
+# Environment
+.env
+.env.*
+*.local
+
+# Logs
+*.log
+logs/
+
+# Docker
+*.dockerignore.bak
+
+# SPA build artefacts (also covered by repub/.gitignore)
+repub/node_modules/
+repub/dist/
+repub/.vite/

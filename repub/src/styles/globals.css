@@ -1,0 +1,95 @@
+@import "tailwindcss";
+
+/* ── Custom properties ──────────────────────────────────────────────────── */
+
+:root {
+  /* Core palette */
+  --color-primary:        #0a88cd;
+  --color-accent:         #c052c3;
+  --color-navy:           #012862;
+  --color-void:           #090909;
+  --color-light:          #f7f7f7;
+
+  /* Derived tokens */
+  --color-primary-dim:    rgba(10, 136, 205, 0.12);
+  --color-accent-dim:     rgba(192, 82, 195, 0.1);
+  --color-border:         rgba(10, 136, 205, 0.25);
+  --color-border-subtle:  rgba(247, 247, 247, 0.07);
+  --color-surface:        rgba(1, 40, 98, 0.35);
+
+  /* Typography scale */
+  --text-xs:    0.65rem;
+  --text-sm:    0.80rem;
+  --text-base:  0.95rem;
+  --text-lg:    1.15rem;
+  --text-xl:    1.50rem;
+  --text-2xl:   2.25rem;
+  --text-3xl:   3.50rem;
+  --text-hero:  clamp(4rem, 8vw, 7rem);
+
+  /* Font families */
+  --font-display: 'Cinzel', serif;
+  --font-body:    'Space Mono', monospace;
+  --font-data:    'IBM Plex Mono', monospace;
+}
+
+/* ── Base resets ────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-void);
+  color: var(--color-light);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Typography helpers ─────────────────────────────────────────────────── */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+code, pre {
+  font-family: var(--font-data);
+}
+
+/* ── Scrollbar ──────────────────────────────────────────────────────────── */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-void);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 3px;
+}
