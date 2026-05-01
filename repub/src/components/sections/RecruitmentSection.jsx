@@ -26,7 +26,7 @@ export default function RecruitmentSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          LEGIO — IV
+          RECRUITMENT — V
         </motion.p>
 
         <motion.h2
@@ -72,7 +72,7 @@ export default function RecruitmentSection() {
               className="text-(--color-light)/75 mb-8"
               style={{ fontSize: 'var(--text-sm)', lineHeight: 1.8 }}
             >
-              Join our public Discord and open a recruitment ticket. An interviewer from the Senatus will
+              Join our public Discord and open a recruitment ticket. A member of alliance leadership will
               review your application and conduct a brief interview. Expect a response within 48 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">

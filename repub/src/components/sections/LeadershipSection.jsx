@@ -75,7 +75,7 @@ export default function LeadershipSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          SENATUS — III
+          LEADERSHIP — III
         </motion.p>
 
         <motion.h2

@@ -24,7 +24,7 @@ export default function MemberCorporationsSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          CORPUS — IV
+          CORPORATIONS — IV
         </motion.p>
 
         <motion.h2

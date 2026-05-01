@@ -38,7 +38,7 @@ export default function HeroSection() {
           className="mb-8 tracking-widest text-(--color-primary)"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.3em' }}
         >
-          IMPERIUM — EVE ONLINE ALLIANCE
+          EVE ONLINE — NEW EDEN ALLIANCE
         </motion.p>
 
         {/* Alliance name */}

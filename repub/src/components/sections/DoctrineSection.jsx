@@ -6,32 +6,32 @@ import Divider from '../ui/Divider'
 
 const PILLARS = [
   {
-    label: 'Proelium',
+    label: 'Combat',
     title: 'Ready to Fight',
     body: 'Weekly fleet operations, strategic wars, and small gang combat. We field doctrine ships and fight as a unit — from skirmishes to coalition engagements.',
   },
   {
-    label: 'Industria',
+    label: 'Industry',
     title: 'Industrial Power',
     body: 'Alliance-level manufacturing, mining operations, and supply infrastructure. The Republic\'s economy is self-sustaining and built to last.',
   },
   {
-    label: 'Fines',
+    label: 'Expansion',
     title: 'New Frontiers',
     body: 'The alliance is actively expanding into new areas of space. Members who join now will help shape what The Republic becomes next.',
   },
   {
-    label: 'Communitas',
-    title: 'Community',
+    label: 'Community',
+    title: 'A Place to Belong',
     body: 'A welcoming home for capsuleers of all skill levels and timezones. Real life always comes first — we build around people, not metrics.',
   },
   {
-    label: 'Doctrina',
+    label: 'Training',
     title: 'Learning Together',
     body: 'Veterans and new pilots operate side by side. The Republic\'s Academy and mentorship programme ensure no capsuleer is left behind.',
   },
   {
-    label: 'Ambitio',
+    label: 'Vision',
     title: 'Ambitions',
     body: 'We are building something lasting — an alliance with its own identity, its own space, and its own future in New Eden.',
   },
@@ -51,7 +51,7 @@ export default function DoctrineSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          CAUSA — II
+          MEMBERSHIP — II
         </motion.p>
 
         <motion.h2
