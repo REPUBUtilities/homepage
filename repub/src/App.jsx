@@ -4,6 +4,7 @@ import HeroSection from './components/sections/HeroSection'
 import AboutSection from './components/sections/AboutSection'
 import DoctrineSection from './components/sections/DoctrineSection'
 import LeadershipSection from './components/sections/LeadershipSection'
+import MemberCorporationsSection from './components/sections/MemberCorporationsSection'
 import RecruitmentSection from './components/sections/RecruitmentSection'
 
 export default function App() {
@@ -15,6 +16,7 @@ export default function App() {
         <AboutSection />
         <DoctrineSection />
         <LeadershipSection />
+        <MemberCorporationsSection />
         <RecruitmentSection />
       </main>
       <Footer />

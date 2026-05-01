@@ -5,6 +5,8 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "fetch-corps": "node scripts/fetch-corps.js",
+    "prebuild": "node scripts/fetch-corps.js",
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview"

@@ -2,10 +2,11 @@ export const ALLIANCE_NAME = 'The Republic'
 export const ALLIANCE_TAGLINE = 'Pro Patria Et Stellis'
 
 export const NAV_LINKS = [
-  { label: 'About',       href: '#about' },
-  { label: 'Doctrine',    href: '#doctrine' },
-  { label: 'Leadership',  href: '#leadership' },
-  { label: 'Recruitment', href: '#recruitment' },
+  { label: 'About',        href: '#about' },
+  { label: 'Doctrine',     href: '#doctrine' },
+  { label: 'Leadership',   href: '#leadership' },
+  { label: 'Corporations', href: '#corporations' },
+  { label: 'Recruitment',  href: '#recruitment' },
 ]
 
 export const COLORS = {
