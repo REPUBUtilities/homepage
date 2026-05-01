@@ -66,9 +66,24 @@ export default function AboutSection() {
           </motion.p>
         </div>
 
+        {/* Establishing shot */}
         <motion.div
           variants={fadeUp}
-          className="mt-14 pt-10 border-t border-(--color-border-subtle) flex gap-16"
+          className="mt-14 rounded-sm overflow-hidden border border-(--color-border-subtle)"
+          style={{ height: '320px' }}
+        >
+          <img
+            src="/img/Onslaugh Keyart.jpg"
+            alt=""
+            aria-hidden="true"
+            className="w-full h-full object-cover object-center"
+            style={{ filter: 'brightness(0.75) saturate(0.9)' }}
+          />
+        </motion.div>
+
+        <motion.div
+          variants={fadeUp}
+          className="mt-10 pt-10 border-t border-(--color-border-subtle) flex gap-16"
         >
           <StatItem
             label="CAPSULEERS"
