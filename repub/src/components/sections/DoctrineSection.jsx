@@ -4,26 +4,36 @@ import Section from '../layout/Section'
 import Card from '../ui/Card'
 import Divider from '../ui/Divider'
 
-const TENETS = [
+const PILLARS = [
   {
-    label: 'Lex',
-    title: 'Rule of Law',
-    body: 'Every pilot operates under the same charter. The Senate governs by deliberation, not decree. Accountability is not optional.',
+    label: 'Proelium',
+    title: 'Ready to Fight',
+    body: 'Weekly fleet operations, strategic wars, and small gang combat. We field doctrine ships and fight as a unit — from skirmishes to coalition engagements.',
   },
   {
-    label: 'Legio',
-    title: 'Fleet Discipline',
-    body: 'In the void, coordination is survival. We field doctrine ships, hold the line, and trust the FC. Ego is left at the gate.',
+    label: 'Industria',
+    title: 'Industrial Power',
+    body: 'Alliance-level manufacturing, mining operations, and supply infrastructure. The Republic\'s economy is self-sustaining and built to last.',
   },
   {
-    label: 'Pax',
-    title: 'Sovereign Peace',
-    body: 'We build to hold, and we hold to build. Our space is productive, defended, and ours. We do not seek conflict — but we finish it.',
+    label: 'Fines',
+    title: 'New Frontiers',
+    body: 'The alliance is actively expanding into new areas of space. Members who join now will help shape what The Republic becomes next.',
   },
   {
-    label: 'Fides',
-    title: 'Loyalty',
-    body: 'We do not abandon our own. What is sworn is kept. The alliance stands behind each of its members as one body.',
+    label: 'Communitas',
+    title: 'Community',
+    body: 'A welcoming home for capsuleers of all skill levels and timezones. Real life always comes first — we build around people, not metrics.',
+  },
+  {
+    label: 'Doctrina',
+    title: 'Learning Together',
+    body: 'Veterans and new pilots operate side by side. The Republic\'s Academy and mentorship programme ensure no capsuleer is left behind.',
+  },
+  {
+    label: 'Ambitio',
+    title: 'Ambitions',
+    body: 'We are building something lasting — an alliance with its own identity, its own space, and its own future in New Eden.',
   },
 ]
 
@@ -41,7 +51,7 @@ export default function DoctrineSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          LEGIO — II
+          CAUSA — II
         </motion.p>
 
         <motion.h2
@@ -49,35 +59,35 @@ export default function DoctrineSection() {
           className="text-white mb-8"
           style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.15em' }}
         >
-          Core Doctrine
+          Why Join The Republic
         </motion.h2>
 
         <Divider glyph="✦" className="mb-14" />
 
         <motion.div
           variants={staggerContainer}
-          className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {TENETS.map((tenet) => (
-            <motion.div key={tenet.label} variants={fadeUp}>
+          {PILLARS.map((pillar) => (
+            <motion.div key={pillar.label} variants={fadeUp}>
               <Card className="h-full flex flex-col">
                 <p
                   className="text-(--color-accent) mb-3 tracking-widest"
                   style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.2em' }}
                 >
-                  {tenet.label.toUpperCase()}
+                  {pillar.label.toUpperCase()}
                 </p>
                 <h3
                   className="text-white mb-4"
                   style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-xl)', letterSpacing: '0.1em', fontWeight: 400 }}
                 >
-                  {tenet.title}
+                  {pillar.title}
                 </h3>
                 <p
                   className="text-(--color-light)/70 flex-1"
                   style={{ fontSize: 'var(--text-sm)', lineHeight: 1.8 }}
                 >
-                  {tenet.body}
+                  {pillar.body}
                 </p>
               </Card>
             </motion.div>
