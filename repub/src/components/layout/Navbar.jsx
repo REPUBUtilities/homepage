@@ -30,12 +30,12 @@ export default function Navbar() {
       ].join(' ')}
     >
       <nav className="mx-auto max-w-[1200px] px-6 h-16 flex items-center justify-between">
-        <a
-          href="#"
-          className="text-white hover:text-(--color-primary) transition-colors"
-          style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.2em', fontSize: 'var(--text-sm)' }}
-        >
-          {ALLIANCE_NAME.toUpperCase()}
+        <a href="#" aria-label={ALLIANCE_NAME}>
+          <img
+            src="/repub-logo.png"
+            alt={ALLIANCE_NAME}
+            className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
+          />
         </a>
 
         <div className="hidden md:flex items-center gap-8">

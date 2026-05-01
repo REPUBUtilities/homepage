@@ -6,7 +6,6 @@ export const NAV_LINKS = [
   { label: 'Doctrine',     href: '#doctrine' },
   { label: 'Leadership',   href: '#leadership' },
   { label: 'Corporations', href: '#corporations' },
-  { label: 'Recruitment',  href: '#recruitment' },
 ]
 
 export const COLORS = {

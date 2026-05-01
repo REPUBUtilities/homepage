@@ -6,16 +6,24 @@ import Button from '../ui/Button'
 export default function HeroSection() {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated background */}
+      {/* Hero image */}
+      <img
+        src="/hesarid.png"
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+        style={{ animation: 'heroGradientDrift 28s ease-in-out infinite alternate' }}
+      />
+
+      {/* Dark overlay — heavier at bottom so text stays readable */}
       <div
         className="absolute inset-0 pointer-events-none"
         aria-hidden="true"
         style={{
           background: `
-            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(1,40,98,0.35) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 40% at 70% 20%, rgba(10,136,205,0.08) 0%, transparent 60%)
+            linear-gradient(to bottom, rgba(9,9,9,0.45) 0%, rgba(9,9,9,0.72) 100%),
+            radial-gradient(ellipse 80% 60% at 50% 40%, rgba(1,40,98,0.30) 0%, transparent 70%)
           `,
-          animation: 'heroGradientDrift 28s ease-in-out infinite alternate',
         }}
       />
 

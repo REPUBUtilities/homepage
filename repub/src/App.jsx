@@ -5,7 +5,7 @@ import AboutSection from './components/sections/AboutSection'
 import DoctrineSection from './components/sections/DoctrineSection'
 import LeadershipSection from './components/sections/LeadershipSection'
 import MemberCorporationsSection from './components/sections/MemberCorporationsSection'
-import RecruitmentSection from './components/sections/RecruitmentSection'
+import AllianceCTA from './components/sections/AllianceCTA'
 
 export default function App() {
   return (
@@ -17,7 +17,7 @@ export default function App() {
         <DoctrineSection />
         <LeadershipSection />
         <MemberCorporationsSection />
-        <RecruitmentSection />
+        <AllianceCTA />
       </main>
       <Footer />
     </>
