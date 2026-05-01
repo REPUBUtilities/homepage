@@ -2,8 +2,30 @@ import { motion } from 'framer-motion'
 import { fadeUp, staggerContainer } from '../../lib/variants'
 import Section from '../layout/Section'
 import Divider from '../ui/Divider'
+import { useAllianceStats } from '../../hooks/useAllianceStats'
+
+function StatItem({ value, label, loading }) {
+  return (
+    <div className="flex flex-col gap-2">
+      <span
+        className="text-white tabular-nums"
+        style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.1em' }}
+      >
+        {loading ? '—' : (value ?? '—')}
+      </span>
+      <span
+        className="text-(--color-primary)"
+        style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.2em' }}
+      >
+        {label}
+      </span>
+    </div>
+  )
+}
 
 export default function AboutSection() {
+  const { stats, loading } = useAllianceStats()
+
   return (
     <Section id="about">
       <motion.div
@@ -43,6 +65,27 @@ export default function AboutSection() {
             return they are afforded the full protection and resources of the alliance.
           </motion.p>
         </div>
+
+        <motion.div
+          variants={fadeUp}
+          className="mt-14 pt-10 border-t border-(--color-border-subtle) flex gap-16"
+        >
+          <StatItem
+            label="CAPSULEERS"
+            value={stats?.memberCount.toLocaleString()}
+            loading={loading}
+          />
+          <StatItem
+            label="CORPORATIONS"
+            value={stats?.corpCount}
+            loading={loading}
+          />
+          <StatItem
+            label="FOUNDED"
+            value="YC118"
+            loading={false}
+          />
+        </motion.div>
       </motion.div>
     </Section>
   )
