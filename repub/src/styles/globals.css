@@ -71,9 +71,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
-}
 
 code, pre {
   font-family: var(--font-data);

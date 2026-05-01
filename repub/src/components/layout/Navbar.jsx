@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGaugeHigh, faMap, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { NAV_LINKS, TOOL_LINKS, ALLIANCE_NAME } from '../../lib/constants'
+import { useActiveSection } from '../../hooks/useActiveSection'
 
 const TOOL_ICONS = {
   Dashboard: faGaugeHigh,
@@ -11,8 +12,35 @@ const TOOL_ICONS = {
   Discord:   faDiscord,
 }
 
+const SECTION_IDS = NAV_LINKS.map(({ href }) => href.replace('#', ''))
+
+function NavLink({ href, label, active }) {
+  return (
+    <a
+      href={href}
+      className={[
+        'group relative pb-0.5 transition-colors duration-300',
+        active ? 'text-white' : 'text-(--color-light)/50 hover:text-white',
+        'no-underline hover:no-underline',
+      ].join(' ')}
+      style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.15em' }}
+    >
+      {label.toUpperCase()}
+      <span
+        className={[
+          'absolute -bottom-0.5 left-0 h-px bg-(--color-primary)',
+          'transition-[width] duration-300 ease-out',
+          active ? 'w-full' : 'w-0 group-hover:w-full',
+        ].join(' ')}
+        style={{ boxShadow: '0 0 6px rgba(10,136,205,0.6)' }}
+      />
+    </a>
+  )
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const activeSection = useActiveSection(SECTION_IDS)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -29,7 +57,7 @@ export default function Navbar() {
           : 'bg-transparent',
       ].join(' ')}
     >
-      <nav className="mx-auto max-w-[1200px] px-6 h-16 flex items-center justify-between">
+      <nav className="mx-auto max-w-300 px-6 h-16 flex items-center justify-between">
         <a href="#" aria-label={ALLIANCE_NAME}>
           <img
             src="/repub-logo.png"
@@ -43,13 +71,11 @@ export default function Navbar() {
           <ul className="flex items-center gap-8">
             {NAV_LINKS.map(({ label, href }) => (
               <li key={href}>
-                <a
+                <NavLink
                   href={href}
-                  className="text-(--color-light)/60 hover:text-(--color-primary) transition-colors"
-                  style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.15em' }}
-                >
-                  {label.toUpperCase()}
-                </a>
+                  label={label}
+                  active={activeSection === href.replace('#', '')}
+                />
               </li>
             ))}
           </ul>
