@@ -7,7 +7,7 @@ The site serves as a public-facing presence: identity, recruitment, lore, and fl
 
 **Stack:** React + Vite · Tailwind CSS · Framer Motion · React Router (BrowserRouter)  
 **Deploy target:** Nginx Docker image (self-hosted)  
-**Repo:** [add repo URL]
+**Repo:** https://github.com/REPUBUtilities/homepage
 
 ---
 
