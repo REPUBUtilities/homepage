@@ -1,5 +1,5 @@
 export const ALLIANCE_NAME = 'The Republic'
-export const ALLIANCE_TAGLINE = 'Pro Patria Et Stellis'
+export const ALLIANCE_TAGLINE = 'Futurum Aedificantes'
 
 export const NAV_LINKS = [
   { label: 'About',        href: '#about' },

@@ -4,18 +4,19 @@ import Section from '../layout/Section'
 import Divider from '../ui/Divider'
 import { useAllianceStats } from '../../hooks/useAllianceStats'
 
-function StatItem({ value, label, loading }) {
+function StatItem({ value, label, loading, centered, right }) {
+  const align = centered ? 'items-center text-center' : right ? 'items-end text-right' : 'items-start'
   return (
-    <div className="flex flex-col gap-2">
+    <div className={`flex flex-col gap-3 ${align}`}>
       <span
         className="text-white tabular-nums"
-        style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.1em' }}
+        style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-3xl)', letterSpacing: '0.08em', lineHeight: 1 }}
       >
         {loading ? '—' : (value ?? '—')}
       </span>
       <span
         className="text-(--color-primary)"
-        style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.2em' }}
+        style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.25em' }}
       >
         {label}
       </span>
@@ -54,52 +55,26 @@ export default function AboutSection() {
 
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl">
           <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', lineHeight: 1.8 }} className="text-(--color-light)/80">
-            The Republic is an alliance built on the principles of order, mutual defence, and sovereign governance
-            in the stars of New Eden. Founded by capsuleers who believe that lasting power is built on law and
-            loyalty — not on brute force alone.
+            The Republic is an alliance guided by a clear set of core principles, codified in our founding
+            document — Pax Ludos. We welcome capsuleers of all skill levels and play styles. Whether you are
+            a veteran fleet commander or a pilot taking your first steps into New Eden, there is a place for
+            you here.
           </motion.p>
 
           <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', lineHeight: 1.8 }} className="text-(--color-light)/80">
-            We operate across multiple theatres: nullsec sovereignty, wormhole expeditions, and strategic
-            deployments wherever the Senate deems necessary. Our members are held to a high standard, and in
-            return they are afforded the full protection and resources of the alliance.
+            We are built around collaboration — member corporations each bring their own strengths and contribute
+            to our shared goals. Governance is transparent, decisions are made collectively, and every member
+            has the opportunity to shape what The Republic becomes.
           </motion.p>
         </div>
 
-        {/* Establishing shot */}
         <motion.div
           variants={fadeUp}
-          className="mt-14 rounded-sm overflow-hidden border border-(--color-border-subtle)"
-          style={{ height: '320px' }}
+          className="mt-16 pt-12 border-t border-(--color-border) grid grid-cols-3"
         >
-          <img
-            src="/img/Onslaugh Keyart.jpg"
-            alt=""
-            aria-hidden="true"
-            className="w-full h-full object-cover object-center"
-            style={{ filter: 'brightness(0.75) saturate(0.9)' }}
-          />
-        </motion.div>
-
-        <motion.div
-          variants={fadeUp}
-          className="mt-10 pt-10 border-t border-(--color-border-subtle) flex gap-16"
-        >
-          <StatItem
-            label="CAPSULEERS"
-            value={stats?.memberCount.toLocaleString()}
-            loading={loading}
-          />
-          <StatItem
-            label="CORPORATIONS"
-            value={stats?.corpCount}
-            loading={loading}
-          />
-          <StatItem
-            label="FOUNDED"
-            value="YC118"
-            loading={false}
-          />
+          <StatItem label="CAPSULEERS" value={stats?.memberCount.toLocaleString()} loading={loading} />
+          <StatItem label="CORPORATIONS" value={stats?.corpCount} loading={loading} centered />
+          <StatItem label="FOUNDED" value="YC118" loading={false} right />
         </motion.div>
       </motion.div>
     </Section>
