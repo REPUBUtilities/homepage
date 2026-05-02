@@ -22,7 +22,7 @@ export const COLORS = {
 }
 
 export const TOOL_LINKS = [
-  { label: 'Dashboard', href: 'https://dash.repub.gg' },
+  { label: 'Dashboard', href: 'https://dash.republic-alliance.com/' },
   { label: 'Maps',      href: 'https://maps.republic-alliance.com' },
   { label: 'Wiki',      href: 'https://wiki.republic-alliance.com' },
   { label: 'Discord',   href: 'https://republic-alliance.com/discord' },

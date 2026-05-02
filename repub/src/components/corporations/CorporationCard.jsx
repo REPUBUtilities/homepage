@@ -14,6 +14,7 @@ export default function CorporationCard({ corp, onClick }) {
       className={[
         'group w-full text-left rounded-sm border border-(--color-border)',
         'bg-(--color-surface) backdrop-blur-sm p-5',
+        'flex flex-col',
         'transition-all duration-300 cursor-pointer',
         'hover:border-[rgba(10,136,205,0.5)] hover:-translate-y-0.5',
         'hover:bg-[rgba(1,40,98,0.5)]',
@@ -53,7 +54,7 @@ export default function CorporationCard({ corp, onClick }) {
       </p>
 
       {/* Footer row */}
-      <div className="flex items-center justify-between">
+      <div className="mt-auto flex items-center justify-between">
         <span
           className="text-(--color-light)/35"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)' }}
@@ -61,16 +62,11 @@ export default function CorporationCard({ corp, onClick }) {
           {corp.memberCount.toLocaleString()} members
         </span>
 
-        <span
-          className={[
-            'px-2 py-0.5 rounded-sm border text-[10px] tracking-widest uppercase',
-            corp.recruiting
-              ? 'border-(--color-border) text-(--color-primary) bg-(--color-primary-dim)'
-              : 'border-[rgba(192,82,195,0.3)] text-(--color-accent) bg-(--color-accent-dim)',
-          ].join(' ')}
-        >
-          {corp.recruiting ? 'Recruiting' : 'Closed'}
-        </span>
+        {corp.recruiting && (
+          <span className="px-2 py-0.5 rounded-sm border text-[10px] tracking-widest uppercase border-(--color-border) text-(--color-primary) bg-(--color-primary-dim)">
+            Recruiting
+          </span>
+        )}
       </div>
     </motion.button>
   )
