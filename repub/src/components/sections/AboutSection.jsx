@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeUp, staggerContainer } from '../../lib/variants'
 import Section from '../layout/Section'
 import Divider from '../ui/Divider'
@@ -26,6 +27,7 @@ function StatItem({ value, label, loading, centered, right }) {
 
 export default function AboutSection() {
   const { stats, loading } = useAllianceStats()
+  const { t } = useTranslation()
 
   return (
     <Section id="about">
@@ -40,7 +42,7 @@ export default function AboutSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          OVERVIEW — I
+          {t('about.eyebrow')}
         </motion.p>
 
         <motion.h2
@@ -48,23 +50,18 @@ export default function AboutSection() {
           className="text-white mb-8"
           style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.15em' }}
         >
-          About The Republic
+          {t('about.heading')}
         </motion.h2>
 
         <Divider className="mb-12" />
 
         <div className="grid md:grid-cols-2 gap-12 max-w-4xl">
           <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', lineHeight: 1.8 }} className="text-(--color-light)/80">
-            The Republic is an alliance guided by a clear set of core principles, codified in our founding
-            document — Pax Ludos. We welcome capsuleers of all skill levels and play styles. Whether you are
-            a veteran fleet commander or a pilot taking your first steps into New Eden, there is a place for
-            you here.
+            {t('about.p1')}
           </motion.p>
 
           <motion.p variants={fadeUp} style={{ fontSize: 'var(--text-base)', lineHeight: 1.8 }} className="text-(--color-light)/80">
-            We are built around collaboration — member corporations each bring their own strengths and contribute
-            to our shared goals. Governance is transparent, decisions are made collectively, and every member
-            has the opportunity to shape what The Republic becomes.
+            {t('about.p2')}
           </motion.p>
         </div>
 
@@ -72,9 +69,9 @@ export default function AboutSection() {
           variants={fadeUp}
           className="mt-16 pt-12 border-t border-(--color-border) grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0"
         >
-          <StatItem label="CAPSULEERS" value={stats?.memberCount.toLocaleString()} loading={loading} />
-          <StatItem label="CORPORATIONS" value={stats?.corpCount} loading={loading} centered />
-          <StatItem label="FOUNDED" value="YC118" loading={false} right />
+          <StatItem label={t('about.stat_capsuleers')} value={stats?.memberCount.toLocaleString()} loading={loading} />
+          <StatItem label={t('about.stat_corporations')} value={stats?.corpCount} loading={loading} centered />
+          <StatItem label={t('about.stat_founded')} value="YC118" loading={false} right />
         </motion.div>
       </motion.div>
     </Section>

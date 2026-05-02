@@ -1,11 +1,15 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeUp } from '../../lib/variants'
 
 const ESI_IMG = 'https://images.evetech.net'
 
 export default function CorporationCard({ corp, onClick }) {
   const [logoError, setLogoError] = useState(false)
+  const { t, i18n } = useTranslation()
+  const isFr = i18n.language === 'fr'
+  const role = isFr ? (corp.role_fr || corp.role) : corp.role
 
   return (
     <motion.button
@@ -50,7 +54,7 @@ export default function CorporationCard({ corp, onClick }) {
         className="text-(--color-light)/50 mb-3"
         style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.08em' }}
       >
-        {corp.role}
+        {role}
       </p>
 
       {/* Footer row */}
@@ -59,12 +63,12 @@ export default function CorporationCard({ corp, onClick }) {
           className="text-(--color-light)/35"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)' }}
         >
-          {corp.memberCount.toLocaleString()} members
+          {corp.memberCount.toLocaleString()} {t('corps.members')}
         </span>
 
         {corp.recruiting && (
           <span className="px-2 py-0.5 rounded-sm border text-[10px] tracking-widest uppercase border-(--color-border) text-(--color-primary) bg-(--color-primary-dim)">
-            Recruiting
+            {t('corps.recruiting')}
           </span>
         )}
       </div>

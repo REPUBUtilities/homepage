@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
@@ -13,6 +14,10 @@ export default function CorporationModal({ corp, onClose }) {
   const [portraitError, setPortraitError] = useState(false)
   const [logoError, setLogoError]         = useState(false)
   const closeRef = useRef(null)
+  const { t, i18n } = useTranslation()
+  const isFr = i18n.language === 'fr'
+  const role        = isFr ? (corp.role_fr        || corp.role)        : corp.role
+  const description = isFr ? (corp.description_fr || corp.description) : corp.description
 
   // Scroll lock + focus close button on mount
   useEffect(() => {
@@ -30,7 +35,7 @@ export default function CorporationModal({ corp, onClose }) {
 
   return createPortal(
     <motion.div
-      className="fixed inset-0 z-[200] flex items-center justify-center p-4"
+      className="fixed inset-0 z-200 flex items-center justify-center p-4"
       variants={modalBackdrop}
       initial="hidden"
       animate="visible"
@@ -42,7 +47,7 @@ export default function CorporationModal({ corp, onClose }) {
 
       <motion.div
         className={[
-          'relative z-[201] w-full max-w-lg rounded-sm',
+          'relative z-201 w-full max-w-lg rounded-sm',
           'border border-(--color-border) bg-[rgba(9,9,9,0.92)] backdrop-blur-md',
           'shadow-[0_0_60px_rgba(10,136,205,0.12)]',
           'overflow-hidden',
@@ -82,7 +87,7 @@ export default function CorporationModal({ corp, onClose }) {
               className="mt-1 text-(--color-light)/45"
               style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.1em' }}
             >
-              [{corp.ticker}] · {corp.role}
+              [{corp.ticker}] · {role}
             </p>
           </div>
 
@@ -126,18 +131,18 @@ export default function CorporationModal({ corp, onClose }) {
                 className="text-(--color-light)/40 mt-0.5"
                 style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.08em' }}
               >
-                Chief Executive Officer · {corp.memberCount.toLocaleString()} members
+                {t('corps.ceo_title')} · {corp.memberCount.toLocaleString()} {t('corps.members')}
               </p>
             </div>
           </div>
 
           {/* Description */}
-          {corp.description && (
+          {description && (
             <p
               className="text-(--color-light)/70 leading-relaxed whitespace-pre-line"
               style={{ fontSize: 'var(--text-sm)' }}
             >
-              {corp.description}
+              {description}
             </p>
           )}
         </div>
@@ -152,7 +157,7 @@ export default function CorporationModal({ corp, onClose }) {
                 : 'border-[rgba(192,82,195,0.3)] text-(--color-accent) bg-(--color-accent-dim)',
             ].join(' ')}
           >
-            {corp.recruiting ? 'Recruiting' : 'Not Recruiting'}
+            {corp.recruiting ? t('corps.recruiting') : t('corps.not_recruiting')}
           </span>
 
           <div className="flex items-center gap-3">
@@ -169,7 +174,7 @@ export default function CorporationModal({ corp, onClose }) {
             )}
             <Button variant="secondary" onClick={onClose}
               className="text-[10px] tracking-widest py-1.5 px-4">
-              CLOSE
+              {t('corps.close')}
             </Button>
           </div>
         </div>

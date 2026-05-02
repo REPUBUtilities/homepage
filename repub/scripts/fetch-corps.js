@@ -25,57 +25,81 @@ const ALLIANCE_ID = 99006260;
 const CORP_META = {
 	98694116: {
 		role: "Executor & Industry",
+		role_fr: "Exécutrice & Industrie",
 		description:
 			"The founding corporation of The Republic and seat of its executive authority.\nOperates across industry, manufacturing, and active fleet combat — open to capsuleers of all skill levels and backgrounds.",
+		description_fr:
+			"La corporation fondatrice de The Republic et siège de son autorité exécutive.\nOpère dans l'industrie, la fabrication et le combat de flotte actif — ouverte aux capsuliers de tous niveaux et horizons.",
 		recruiting: true,
 		discordUrl: "https://discord.gg/5qmj7ygJRg",
 	},
 	98756906: {
 		role: "Industry & Manufacturing",
+		role_fr: "Industrie & Fabrication",
 		description:
 			"A large francophone corporation built around mining and industrial production.\nActive across highsec, lowsec, and wormhole space — all skill levels welcome, francophone pilots only.",
+		description_fr:
+			"Une grande corporation francophone axée sur l'exploitation minière et la production industrielle.\nActive en highsec, lowsec et dans l'espace de trous de ver — tous niveaux bienvenus, pilotes francophones uniquement.",
 		recruiting: true,
 		discordUrl: null,
 	},
 	98704736: {
 		role: "Hauling & Logistics",
+		role_fr: "Transport & Logistique",
 		description:
 			"The alliance's dedicated logistics arm, specialising in highsec freight at competitive rates.\nKeeps the supply lines of The Republic moving.",
+		description_fr:
+			"Le bras logistique dédié de l'alliance, spécialisé dans le fret highsec à des tarifs compétitifs.\nMaintient les lignes d'approvisionnement de The Republic en mouvement.",
 		recruiting: false,
 		discordUrl: null,
 	},
 	98770674: {
 		role: "Private Wealth Management",
+		role_fr: "Gestion de Fortune Privée",
 		description:
 			"The official family office of the Kansene and Ghekon families.\nConducts strategic investments across assets, structures, and emerging corporations on behalf of its principals.",
+		description_fr:
+			"Le bureau familial officiel des familles Kansene et Ghekon.\nConduit des investissements stratégiques dans des actifs, structures et corporations émergentes pour le compte de ses mandants.",
 		recruiting: false,
 		discordUrl: null,
 	},
 	98800068: {
 		role: "Wholesale Trading",
+		role_fr: "Commerce en Gros",
 		description:
 			"A trading house operating within the alliance's economic sphere.\nProvides wholesale material exchange services to member corporations and external partners.",
+		description_fr:
+			"Une maison de commerce opérant au sein de la sphère économique de l'alliance.\nFournit des services d'échange de matériaux en gros aux corporations membres et aux partenaires externes.",
 		recruiting: false,
 		discordUrl: null,
 	},
 	98674220: {
 		role: "Mentoring & Trading",
+		role_fr: "Mentorat & Commerce",
 		description:
 			"A low-tax corporation whose primary mandate is mentorship.\nMembers serve as instructors for newer pilots within the alliance — open to capsuleers with at least six months of experience.",
+		description_fr:
+			"Une corporation à faible imposition dont le mandat principal est le mentorat.\nLes membres servent d'instructeurs pour les pilotes plus récents au sein de l'alliance — ouverte aux capsuliers ayant au moins six mois d'expérience.",
 		recruiting: true,
 		discordUrl: null,
 	},
 	98725317: {
 		role: "Covert Operations",
+		role_fr: "Opérations Clandestines",
 		description:
 			"Handles operations that are not discussed in open channels.\nMandate and activities are known only to alliance command.",
+		description_fr:
+			"Gère les opérations qui ne sont pas discutées en canaux ouverts.\nLe mandat et les activités ne sont connus que du commandement de l'alliance.",
 		recruiting: false,
 		discordUrl: null,
 	},
 	98711376: {
 		role: "Teaching & Training",
+		role_fr: "Enseignement & Formation",
 		description:
 			"The Republic's dedicated academy for new capsuleers.\nProvides structured training and guidance to pilots taking their first steps in New Eden.",
+		description_fr:
+			"L'académie dédiée de The Republic pour les nouveaux capsuliers.\nFournit formation structurée et guidance aux pilotes faisant leurs premiers pas dans New Eden.",
 		recruiting: false,
 		discordUrl: null,
 	},
@@ -119,10 +143,12 @@ async function main() {
 			name: corp.name,
 			ticker: corp.ticker,
 			role: meta.role,
+			role_fr: meta.role_fr ?? null,
 			memberCount: corp.member_count,
 			ceoId: corp.ceo_id,
 			ceoName: char.name,
 			description: meta.description,
+			description_fr: meta.description_fr ?? null,
 			recruiting: meta.recruiting,
 			discordUrl: meta.discordUrl,
 		});

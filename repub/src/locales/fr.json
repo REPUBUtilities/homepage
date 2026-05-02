@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "about": "À propos",
+    "doctrine": "Doctrine",
+    "leadership": "Direction",
+    "corporations": "Corporations"
+  },
+  "hero": {
+    "eyebrow": "EVE ONLINE — ALLIANCE DE NEW EDEN",
+    "cta_primary": "Rejoindre l'Alliance",
+    "cta_secondary": "En savoir plus"
+  },
+  "about": {
+    "eyebrow": "PRÉSENTATION — I",
+    "heading": "À propos de The Republic",
+    "p1": "The Republic est une alliance guidée par un ensemble clair de principes fondateurs, codifiés dans notre document fondateur — Pax Ludos. Nous accueillons les capsuliers de tous niveaux et styles de jeu. Que vous soyez un commandant de flotte chevronné ou un pilote faisant ses premiers pas dans New Eden, vous avez votre place ici.",
+    "p2": "Nous sommes bâtis sur la collaboration — chaque corporation membre apporte ses propres forces et contribue à nos objectifs communs. La gouvernance est transparente, les décisions sont prises collectivement, et chaque membre a la possibilité de façonner ce que devient The Republic.",
+    "stat_capsuleers": "CAPSULIERS",
+    "stat_corporations": "CORPORATIONS",
+    "stat_founded": "FONDÉE"
+  },
+  "doctrine": {
+    "eyebrow": "ADHÉSION — II",
+    "heading": "Rejoindre The Republic",
+    "pillars": {
+      "combat": {
+        "label": "Combat",
+        "title": "Prêt au Combat",
+        "body": "Opérations de flotte hebdomadaires, guerres stratégiques et combat en petit groupe. Nous déployons des vaisseaux de doctrine et combattons en formation — des escarmouches aux engagements de coalition."
+      },
+      "industry": {
+        "label": "Industrie",
+        "title": "Puissance Industrielle",
+        "body": "Fabrication à l'échelle de l'alliance, opérations minières et infrastructure d'approvisionnement. L'économie de The Republic est autosuffisante et construite pour durer."
+      },
+      "expansion": {
+        "label": "Expansion",
+        "title": "Nouvelles Frontières",
+        "body": "L'alliance s'étend activement vers de nouveaux secteurs de l'espace. Les membres qui rejoignent maintenant contribueront à façonner ce que devient The Republic."
+      },
+      "community": {
+        "label": "Communauté",
+        "title": "Un Foyer",
+        "body": "Un foyer accueillant pour les capsuliers de tous niveaux et fuseaux horaires. La vie réelle passe toujours en premier — nous construisons autour des personnes, pas des métriques."
+      },
+      "training": {
+        "label": "Formation",
+        "title": "Apprendre Ensemble",
+        "body": "Vétérans et nouveaux pilotes opèrent côte à côte. L'Académie et le programme de mentorat de The Republic veillent à ce qu'aucun capsulier ne soit laissé pour compte."
+      },
+      "vision": {
+        "label": "Vision",
+        "title": "Ambitions",
+        "body": "Nous construisons quelque chose de durable — une alliance avec sa propre identité, son propre espace, et son propre avenir dans New Eden."
+      }
+    }
+  },
+  "leadership": {
+    "eyebrow": "DIRECTION — III",
+    "heading": "Direction",
+    "titles": {
+      "executor": "Exécuteur",
+      "co_executor": "Co-Exécuteur",
+      "director_logistics": "Directeur de la Logistique",
+      "director_operations": "Directeur des Opérations",
+      "director_special_ops": "Directeur des Opérations Spéciales"
+    }
+  },
+  "corps": {
+    "eyebrow": "CORPORATIONS — IV",
+    "heading": "Corporations Membres",
+    "members": "membres",
+    "recruiting": "Recrute",
+    "not_recruiting": "Ne recrute pas",
+    "ceo_title": "Directeur Général",
+    "close": "FERMER"
+  },
+  "cta": {
+    "eyebrow": "CONTACT — V",
+    "heading": "Amenez votre Corporation",
+    "body": "Votre corporation recherche-t-elle une alliance avec infrastructure, opérations actives et une communauté stable ? The Republic est ouverte aux discussions avec les corporations établies qui partagent nos valeurs. Contactez-nous via Discord et un membre de la direction prendra contact avec vous.",
+    "button": "Nous contacter"
+  },
+  "footer": {
+    "copyright": "© {{year}} {{name}}. Tous droits réservés."
+  }
+}

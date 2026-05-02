@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeUp, staggerContainer } from '../../lib/variants'
 import Section from '../layout/Section'
 import Card from '../ui/Card'
@@ -8,15 +9,16 @@ import Divider from '../ui/Divider'
 const ESI_IMG = 'https://images.evetech.net'
 
 const LEADERSHIP = [
-  { id: 2118959330, name: 'Alurel Kansene',  title: 'Executor' },
-  { id: 634816057,  name: 'Kyra Skeako',     title: 'Co-Executor' },
-  { id: 182040020,  name: 'Elldis',           title: 'Director of Logistics' },
-  { id: 2119155034, name: 'Draykey',          title: 'Director of Operations' },
-  { id: 2024942792, name: 'Dmoney3788',       title: 'Director of Special Operations' },
+  { id: 2118959330, name: 'Alurel Kansene', titleKey: 'executor' },
+  { id: 634816057,  name: 'Kyra Skeako',    titleKey: 'co_executor' },
+  { id: 182040020,  name: 'Elldis',          titleKey: 'director_logistics' },
+  { id: 2119155034, name: 'Draykey',         titleKey: 'director_operations' },
+  { id: 2024942792, name: 'Dmoney3788',      titleKey: 'director_special_ops' },
 ]
 
 function LeaderCard({ person, className = '' }) {
   const [imgError, setImgError] = useState(false)
+  const { t } = useTranslation()
 
   return (
     <motion.div variants={fadeUp} className={`h-full ${className}`}>
@@ -54,7 +56,7 @@ function LeaderCard({ person, className = '' }) {
           className="text-(--color-primary)"
           style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.15em' }}
         >
-          {person.title.toUpperCase()}
+          {t(`leadership.titles.${person.titleKey}`).toUpperCase()}
         </p>
       </Card>
     </motion.div>
@@ -62,6 +64,8 @@ function LeaderCard({ person, className = '' }) {
 }
 
 export default function LeadershipSection() {
+  const { t } = useTranslation()
+
   return (
     <Section id="leadership">
       <motion.div
@@ -75,7 +79,7 @@ export default function LeadershipSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          LEADERSHIP — III
+          {t('leadership.eyebrow')}
         </motion.p>
 
         <motion.h2
@@ -83,7 +87,7 @@ export default function LeadershipSection() {
           className="text-white mb-8"
           style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.15em' }}
         >
-          Leadership
+          {t('leadership.heading')}
         </motion.h2>
 
         <Divider className="mb-14" />

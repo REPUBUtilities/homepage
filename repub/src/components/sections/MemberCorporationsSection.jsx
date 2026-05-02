@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { staggerContainer } from '../../lib/variants'
 import corporations from '../../data/corporations.json'
 import Section from '../layout/Section'
@@ -10,6 +11,7 @@ import { fadeUp } from '../../lib/variants'
 
 export default function MemberCorporationsSection() {
   const [selected, setSelected] = useState(null)
+  const { t } = useTranslation()
 
   return (
     <Section id="corporations">
@@ -24,7 +26,7 @@ export default function MemberCorporationsSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          CORPORATIONS — IV
+          {t('corps.eyebrow')}
         </motion.p>
 
         <motion.h2
@@ -32,7 +34,7 @@ export default function MemberCorporationsSection() {
           className="text-white mb-8"
           style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.15em' }}
         >
-          Member Corporations
+          {t('corps.heading')}
         </motion.h2>
 
         <Divider glyph="✦" className="mb-14" />

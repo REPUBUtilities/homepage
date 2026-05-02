@@ -1,9 +1,12 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeUp, fadeIn } from '../../lib/variants'
 import { ALLIANCE_NAME, ALLIANCE_TAGLINE } from '../../lib/constants'
 import Button from '../ui/Button'
 
 export default function HeroSection() {
+  const { t } = useTranslation()
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Hero image */}
@@ -46,7 +49,7 @@ export default function HeroSection() {
           className="mb-8 tracking-widest text-(--color-primary)"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.3em' }}
         >
-          EVE ONLINE — NEW EDEN ALLIANCE
+          {t('hero.eyebrow')}
         </motion.p>
 
         {/* Alliance name */}
@@ -97,10 +100,10 @@ export default function HeroSection() {
           className="mt-12 flex items-center justify-center gap-4"
         >
           <Button onClick={() => document.getElementById('recruitment')?.scrollIntoView({ behavior: 'smooth' })}>
-            Apply to Join
+            {t('hero.cta_primary')}
           </Button>
           <Button variant="secondary" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
-            Learn More
+            {t('hero.cta_secondary')}
           </Button>
         </motion.div>
       </div>
