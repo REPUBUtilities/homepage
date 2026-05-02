@@ -5,9 +5,9 @@ import Divider from '../ui/Divider'
 import { useAllianceStats } from '../../hooks/useAllianceStats'
 
 function StatItem({ value, label, loading, centered, right }) {
-  const align = centered ? 'items-center text-center' : right ? 'items-end text-right' : 'items-start'
+  const align = centered ? 'sm:items-center sm:text-center' : right ? 'sm:items-end sm:text-right' : ''
   return (
-    <div className={`flex flex-col gap-3 ${align}`}>
+    <div className={`flex flex-col gap-3 items-start ${align}`}>
       <span
         className="text-white tabular-nums"
         style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-3xl)', letterSpacing: '0.08em', lineHeight: 1 }}
@@ -70,7 +70,7 @@ export default function AboutSection() {
 
         <motion.div
           variants={fadeUp}
-          className="mt-16 pt-12 border-t border-(--color-border) grid grid-cols-3"
+          className="mt-16 pt-12 border-t border-(--color-border) grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0"
         >
           <StatItem label="CAPSULEERS" value={stats?.memberCount.toLocaleString()} loading={loading} />
           <StatItem label="CORPORATIONS" value={stats?.corpCount} loading={loading} centered />
