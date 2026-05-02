@@ -1,9 +1,11 @@
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGaugeHigh, faMap, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
 import { NAV_LINKS, TOOL_LINKS, ALLIANCE_NAME } from '../../lib/constants'
 import { useActiveSection } from '../../hooks/useActiveSection'
+import LanguageToggle from '../ui/LanguageToggle'
 
 const TOOL_ICONS = {
   Dashboard: faGaugeHigh,
@@ -41,6 +43,7 @@ function NavLink({ href, label, active }) {
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const activeSection = useActiveSection(SECTION_IDS)
+  const { t } = useTranslation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40)
@@ -73,12 +76,15 @@ export default function Navbar() {
               <li key={href}>
                 <NavLink
                   href={href}
-                  label={label}
+                  label={t(`nav.${label.toLowerCase()}`)}
                   active={activeSection === href.replace('#', '')}
                 />
               </li>
             ))}
           </ul>
+
+          {/* Language toggle */}
+          <LanguageToggle />
 
           {/* Tool icons pill */}
           <div

@@ -1,48 +1,23 @@
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import { fadeUp, staggerContainer } from '../../lib/variants'
 import Section from '../layout/Section'
 import Divider from '../ui/Divider'
 
-const PILLARS = [
-  {
-    label: 'Combat',
-    title: 'Ready to Fight',
-    body: 'Weekly fleet operations, strategic wars, and small gang combat. We field doctrine ships and fight as a unit — from skirmishes to coalition engagements.',
-    img: '/img/EVE Online - Battlecruisers.jpg',
-  },
-  {
-    label: 'Industry',
-    title: 'Industrial Power',
-    body: 'Alliance-level manufacturing, mining operations, and supply infrastructure. The Republic\'s economy is self-sustaining and built to last.',
-    img: '/img/Refinery.jpg',
-  },
-  {
-    label: 'Expansion',
-    title: 'New Frontiers',
-    body: 'The alliance is actively expanding into new areas of space. Members who join now will help shape what The Republic becomes next.',
-    img: '/img/Mining Ship.jpg',
-  },
-  {
-    label: 'Community',
-    title: 'A Place to Belong',
-    body: 'A welcoming home for capsuleers of all skill levels and timezones. Real life always comes first — we build around people, not metrics.',
-    img: '/img/EVE Online Mining Fleet.jpg',
-  },
-  {
-    label: 'Training',
-    title: 'Learning Together',
-    body: 'Veterans and new pilots operate side by side. The Republic\'s Academy and mentorship programme ensure no capsuleer is left behind.',
-    img: '/img/Warhead Upgrades Release.jpg',
-  },
-  {
-    label: 'Vision',
-    title: 'Ambitions',
-    body: 'We are building something lasting — an alliance with its own identity, its own space, and its own future in New Eden.',
-    img: '/img/EVE Keynote picture (6).png',
-  },
-]
+const PILLAR_KEYS = ['combat', 'industry', 'expansion', 'community', 'training', 'vision']
 
-function PillarCard({ pillar }) {
+const PILLAR_IMAGES = {
+  combat:    '/img/EVE Online - Battlecruisers.jpg',
+  industry:  '/img/Refinery.jpg',
+  expansion: '/img/Mining Ship.jpg',
+  community: '/img/EVE Online Mining Fleet.jpg',
+  training:  '/img/Warhead Upgrades Release.jpg',
+  vision:    '/img/EVE Keynote picture (6).png',
+}
+
+function PillarCard({ pillarKey }) {
+  const { t } = useTranslation()
+
   return (
     <motion.div variants={fadeUp} className="h-full">
       <div
@@ -55,7 +30,7 @@ function PillarCard({ pillar }) {
         {/* Image header */}
         <div className="relative h-44 overflow-hidden shrink-0">
           <img
-            src={pillar.img}
+            src={PILLAR_IMAGES[pillarKey]}
             alt=""
             aria-hidden="true"
             className="w-full h-full object-cover"
@@ -72,19 +47,19 @@ function PillarCard({ pillar }) {
             className="text-(--color-accent) mb-3 tracking-widest"
             style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.2em' }}
           >
-            {pillar.label.toUpperCase()}
+            {t(`doctrine.pillars.${pillarKey}.label`).toUpperCase()}
           </p>
           <h3
             className="text-white mb-4"
             style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-xl)', letterSpacing: '0.1em', fontWeight: 400 }}
           >
-            {pillar.title}
+            {t(`doctrine.pillars.${pillarKey}.title`)}
           </h3>
           <p
             className="text-(--color-light)/70 flex-1"
             style={{ fontSize: 'var(--text-sm)', lineHeight: 1.8 }}
           >
-            {pillar.body}
+            {t(`doctrine.pillars.${pillarKey}.body`)}
           </p>
         </div>
       </div>
@@ -93,6 +68,8 @@ function PillarCard({ pillar }) {
 }
 
 export default function DoctrineSection() {
+  const { t } = useTranslation()
+
   return (
     <Section id="doctrine" className="bg-[rgba(1,40,98,0.08)]">
       <motion.div
@@ -106,7 +83,7 @@ export default function DoctrineSection() {
           className="text-(--color-primary) tracking-widest mb-4"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
         >
-          MEMBERSHIP — II
+          {t('doctrine.eyebrow')}
         </motion.p>
 
         <motion.h2
@@ -114,7 +91,7 @@ export default function DoctrineSection() {
           className="text-white mb-8"
           style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-2xl)', letterSpacing: '0.15em' }}
         >
-          Why Join The Republic
+          {t('doctrine.heading')}
         </motion.h2>
 
         <Divider glyph="✦" className="mb-14" />
@@ -123,8 +100,8 @@ export default function DoctrineSection() {
           variants={staggerContainer}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
         >
-          {PILLARS.map((pillar) => (
-            <PillarCard key={pillar.label} pillar={pillar} />
+          {PILLAR_KEYS.map((key) => (
+            <PillarCard key={key} pillarKey={key} />
           ))}
         </motion.div>
       </motion.div>

@@ -1,0 +1,87 @@
+{
+  "nav": {
+    "about": "About",
+    "doctrine": "Doctrine",
+    "leadership": "Leadership",
+    "corporations": "Corporations"
+  },
+  "hero": {
+    "eyebrow": "EVE ONLINE — NEW EDEN ALLIANCE",
+    "cta_primary": "Apply to Join",
+    "cta_secondary": "Learn More"
+  },
+  "about": {
+    "eyebrow": "OVERVIEW — I",
+    "heading": "About The Republic",
+    "p1": "The Republic is an alliance guided by a clear set of core principles, codified in our founding document — Pax Ludos. We welcome capsuleers of all skill levels and play styles. Whether you are a veteran fleet commander or a pilot taking your first steps into New Eden, there is a place for you here.",
+    "p2": "We are built around collaboration — member corporations each bring their own strengths and contribute to our shared goals. Governance is transparent, decisions are made collectively, and every member has the opportunity to shape what The Republic becomes.",
+    "stat_capsuleers": "CAPSULEERS",
+    "stat_corporations": "CORPORATIONS",
+    "stat_founded": "FOUNDED"
+  },
+  "doctrine": {
+    "eyebrow": "MEMBERSHIP — II",
+    "heading": "Why Join The Republic",
+    "pillars": {
+      "combat": {
+        "label": "Combat",
+        "title": "Ready to Fight",
+        "body": "Weekly fleet operations, strategic wars, and small gang combat. We field doctrine ships and fight as a unit — from skirmishes to coalition engagements."
+      },
+      "industry": {
+        "label": "Industry",
+        "title": "Industrial Power",
+        "body": "Alliance-level manufacturing, mining operations, and supply infrastructure. The Republic's economy is self-sustaining and built to last."
+      },
+      "expansion": {
+        "label": "Expansion",
+        "title": "New Frontiers",
+        "body": "The alliance is actively expanding into new areas of space. Members who join now will help shape what The Republic becomes next."
+      },
+      "community": {
+        "label": "Community",
+        "title": "A Place to Belong",
+        "body": "A welcoming home for capsuleers of all skill levels and timezones. Real life always comes first — we build around people, not metrics."
+      },
+      "training": {
+        "label": "Training",
+        "title": "Learning Together",
+        "body": "Veterans and new pilots operate side by side. The Republic's Academy and mentorship programme ensure no capsuleer is left behind."
+      },
+      "vision": {
+        "label": "Vision",
+        "title": "Ambitions",
+        "body": "We are building something lasting — an alliance with its own identity, its own space, and its own future in New Eden."
+      }
+    }
+  },
+  "leadership": {
+    "eyebrow": "LEADERSHIP — III",
+    "heading": "Leadership",
+    "titles": {
+      "executor": "Executor",
+      "co_executor": "Co-Executor",
+      "director_logistics": "Director of Logistics",
+      "director_operations": "Director of Operations",
+      "director_special_ops": "Director of Special Operations"
+    }
+  },
+  "corps": {
+    "eyebrow": "CORPORATIONS — IV",
+    "heading": "Member Corporations",
+    "members": "members",
+    "recruiting": "Recruiting",
+    "not_recruiting": "Not Recruiting",
+    "ceo_title": "Chief Executive Officer",
+    "close": "CLOSE"
+  },
+  "cta": {
+    "eyebrow": "CONTACT — V",
+    "heading": "Bring Your Corporation",
+    "body": "Is your corporation seeking an alliance with infrastructure, active operations, and a stable community behind it? The Republic is open to discussions with established corporations that share our values. Reach out through Discord and a member of leadership will be in touch.",
+    "button": "Get in Touch"
+  },
+  "footer": {
+    "copyright": "© {{year}} {{name}}. All rights reserved."
+  }
+}

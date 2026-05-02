@@ -1,11 +1,13 @@
+import { useTranslation } from 'react-i18next'
 import { ALLIANCE_NAME, ALLIANCE_TAGLINE, EXTERNAL_LINKS } from '../../lib/constants'
 
 export default function Footer() {
+  const { t } = useTranslation()
   const year = new Date().getFullYear()
 
   return (
     <footer className="border-t border-(--color-border-subtle) py-12 mt-32">
-      <div className="mx-auto max-w-[1200px] px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+      <div className="mx-auto max-w-300 px-6 flex flex-col md:flex-row items-center justify-between gap-6">
         <div className="text-center md:text-left">
           <p
             className="text-white tracking-widest text-sm"
@@ -49,7 +51,7 @@ export default function Footer() {
           className="text-(--color-light)/30"
           style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.08em' }}
         >
-          © {year} {ALLIANCE_NAME}. All rights reserved.
+          {t('footer.copyright', { year, name: ALLIANCE_NAME })}
         </p>
       </div>
     </footer>
