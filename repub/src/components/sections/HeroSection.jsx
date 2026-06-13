@@ -99,7 +99,7 @@ export default function HeroSection() {
           transition={{ delay: 0.45 }}
           className="mt-12 flex items-center justify-center gap-4"
         >
-          <Button onClick={() => document.getElementById('recruitment')?.scrollIntoView({ behavior: 'smooth' })}>
+          <Button onClick={() => document.getElementById('corporations')?.scrollIntoView({ behavior: 'smooth' })}>
             {t('hero.cta_primary')}
           </Button>
           <Button variant="secondary" onClick={() => document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' })}>
