@@ -24,7 +24,7 @@ export default function RecruitmentSection() {
         <motion.p
           variants={fadeUp}
           className="text-(--color-primary) tracking-widest mb-4"
-          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.25em' }}
         >
           RECRUITMENT — V
         </motion.p>
@@ -37,7 +37,7 @@ export default function RecruitmentSection() {
           Recruitment
         </motion.h2>
 
-        <Divider glyph="✦" className="mb-14" />
+        <Divider className="mb-14" />
 
         <div className="grid md:grid-cols-2 gap-16 max-w-4xl">
           <motion.div variants={fadeUp}>

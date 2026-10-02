@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { ALLIANCE_NAME, ALLIANCE_TAGLINE, EXTERNAL_LINKS } from '../../lib/constants'
+import { ALLIANCE_NAME, ALLIANCE_TAGLINE, ALLIANCE_MARK, EXTERNAL_LINKS } from '../../lib/constants'
 
 export default function Footer() {
   const { t } = useTranslation()
@@ -8,52 +8,53 @@ export default function Footer() {
   return (
     <footer className="border-t border-(--color-border-subtle) py-12 mt-32">
       <div className="mx-auto max-w-300 px-6 flex flex-col md:flex-row items-center justify-between gap-6">
-        <div className="text-center md:text-left">
+        <div className="flex items-center gap-4 text-left">
+          <img src={ALLIANCE_MARK} alt="" aria-hidden="true" className="h-9 w-9 object-contain" />
           <p
-            className="text-white tracking-widest text-sm"
-            style={{ fontFamily: 'var(--font-display)', letterSpacing: '0.2em' }}
+            className="text-white"
+            style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-lg)', letterSpacing: '0.15em' }}
           >
             {ALLIANCE_NAME.toUpperCase()}
-          </p>
-          <p
-            className="mt-1 italic"
-            style={{ fontSize: 'var(--text-xs)', color: 'var(--color-primary)', letterSpacing: '0.1em' }}
-          >
-            {ALLIANCE_TAGLINE}
           </p>
         </div>
 
         <div className="flex items-center gap-6">
           {EXTERNAL_LINKS.discord && (
             <a href={EXTERNAL_LINKS.discord} target="_blank" rel="noopener noreferrer"
-              className="text-(--color-light)/50 hover:text-(--color-primary) transition-colors"
-              style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.12em' }}>
+              className="text-(--color-muted) hover:text-(--color-primary) transition-colors"
+              style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.1em' }}>
               DISCORD
             </a>
           )}
           {EXTERNAL_LINKS.zkillboard && (
             <a href={EXTERNAL_LINKS.zkillboard} target="_blank" rel="noopener noreferrer"
-              className="text-(--color-light)/50 hover:text-(--color-primary) transition-colors"
-              style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.12em' }}>
+              className="text-(--color-muted) hover:text-(--color-primary) transition-colors"
+              style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.1em' }}>
               ZKILLBOARD
             </a>
           )}
           {EXTERNAL_LINKS.forums && (
             <a href={EXTERNAL_LINKS.forums} target="_blank" rel="noopener noreferrer"
-              className="text-(--color-light)/50 hover:text-(--color-primary) transition-colors"
-              style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.12em' }}>
+              className="text-(--color-muted) hover:text-(--color-primary) transition-colors"
+              style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.1em' }}>
               FORUMS
             </a>
           )}
         </div>
 
         <p
-          className="text-(--color-light)/30"
-          style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.08em' }}
+          className="text-(--color-muted)"
+          style={{ fontSize: 'var(--text-sm)' }}
         >
           {t('footer.copyright', { year, name: ALLIANCE_NAME })}
         </p>
       </div>
+      <p
+        className="mt-10 text-center uppercase text-(--color-muted)"
+        style={{ fontFamily: 'var(--font-label)', fontSize: '11px', letterSpacing: '0.18em' }}
+      >
+        {ALLIANCE_TAGLINE}
+      </p>
     </footer>
   )
 }

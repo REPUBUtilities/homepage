@@ -30,7 +30,7 @@ function LeaderCard({ person, className = '' }) {
               style={{ background: 'var(--color-primary-dim)' }}
             >
               <span
-                className="text-(--color-primary) opacity-30 select-none"
+                className="text-(--color-primary) select-none"
                 style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-3xl)', letterSpacing: '0.1em' }}
               >
                 ✦
@@ -48,13 +48,13 @@ function LeaderCard({ person, className = '' }) {
 
         <p
           className="text-white mb-1"
-          style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-base)', letterSpacing: '0.12em' }}
+          style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-lg)', letterSpacing: '0.08em' }}
         >
           {person.name}
         </p>
         <p
           className="text-(--color-primary)"
-          style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.15em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.15em' }}
         >
           {t(`leadership.titles.${person.titleKey}`).toUpperCase()}
         </p>
@@ -77,7 +77,7 @@ export default function LeadershipSection() {
         <motion.p
           variants={fadeUp}
           className="text-(--color-primary) tracking-widest mb-4"
-          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.25em' }}
         >
           {t('leadership.eyebrow')}
         </motion.p>

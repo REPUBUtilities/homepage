@@ -20,7 +20,7 @@ export default function CorporationCard({ corp, onClick }) {
         'bg-(--color-surface) backdrop-blur-sm p-5',
         'flex flex-col',
         'transition-all duration-300 cursor-pointer',
-        'hover:border-[rgba(10,136,205,0.5)] hover:-translate-y-0.5',
+        'hover:border-(--color-border) hover:-translate-y-0.5',
         'hover:bg-[rgba(1,40,98,0.5)]',
         'focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-(--color-primary)',
       ].join(' ')}
@@ -29,7 +29,7 @@ export default function CorporationCard({ corp, onClick }) {
       <div className="mb-4 w-12 h-12 rounded-sm overflow-hidden border border-(--color-border-subtle)">
         {logoError ? (
           <div className="w-full h-full bg-(--color-primary-dim) flex items-center justify-center">
-            <span className="text-(--color-primary) opacity-40 text-lg select-none">✦</span>
+            <span className="text-(--color-primary) text-lg select-none">✦</span>
           </div>
         ) : (
           <img
@@ -44,14 +44,14 @@ export default function CorporationCard({ corp, onClick }) {
       {/* Name */}
       <p
         className="text-white line-clamp-2 mb-1 leading-snug group-hover:text-(--color-primary) transition-colors"
-        style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-base)', letterSpacing: '0.1em' }}
+        style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-lg)', letterSpacing: '0.08em' }}
       >
         {corp.name}
       </p>
 
       {/* Role */}
       <p
-        className="text-(--color-light)/50 mb-3"
+        className="text-(--color-muted) mb-3"
         style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.08em' }}
       >
         {role}
@@ -60,7 +60,7 @@ export default function CorporationCard({ corp, onClick }) {
       {/* Footer row */}
       <div className="mt-auto flex items-center justify-between">
         <span
-          className="text-(--color-light)/35"
+          className="text-(--color-muted)"
           style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)' }}
         >
           {corp.memberCount.toLocaleString()} {t('corps.members')}

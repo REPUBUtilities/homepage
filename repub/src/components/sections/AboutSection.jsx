@@ -10,14 +10,14 @@ function StatItem({ value, label, loading, centered, right }) {
   return (
     <div className={`flex flex-col gap-3 items-start ${align}`}>
       <span
-        className="text-white tabular-nums"
-        style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-3xl)', letterSpacing: '0.08em', lineHeight: 1 }}
+        className="text-(--color-primary) tabular-nums"
+        style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-3xl)', letterSpacing: '0.04em', lineHeight: 1 }}
       >
         {loading ? '—' : (value ?? '—')}
       </span>
       <span
         className="text-(--color-primary)"
-        style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.25em' }}
+        style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.2em' }}
       >
         {label}
       </span>
@@ -40,7 +40,7 @@ export default function AboutSection() {
         <motion.p
           variants={fadeUp}
           className="text-(--color-primary) tracking-widest mb-4"
-          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.25em' }}
         >
           {t('about.eyebrow')}
         </motion.p>
@@ -67,7 +67,7 @@ export default function AboutSection() {
 
         <motion.div
           variants={fadeUp}
-          className="mt-16 pt-12 border-t border-(--color-border) grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0"
+          className="relative mt-16 p-8 sm:p-10 border border-(--color-border-subtle) grid grid-cols-1 sm:grid-cols-3 gap-10 sm:gap-0 before:absolute before:-top-px before:-left-px before:size-3.5 before:border-t before:border-l before:border-(--color-primary) before:content-[''] after:absolute after:-bottom-px after:-right-px after:size-3.5 after:border-b after:border-r after:border-(--color-primary) after:content-['']"
         >
           <StatItem label={t('about.stat_capsuleers')} value={stats?.memberCount.toLocaleString()} loading={loading} />
           <StatItem label={t('about.stat_corporations')} value={stats?.corpCount} loading={loading} centered />

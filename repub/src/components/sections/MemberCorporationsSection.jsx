@@ -24,7 +24,7 @@ export default function MemberCorporationsSection() {
         <motion.p
           variants={fadeUp}
           className="text-(--color-primary) tracking-widest mb-4"
-          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.25em' }}
         >
           {t('corps.eyebrow')}
         </motion.p>
@@ -37,7 +37,7 @@ export default function MemberCorporationsSection() {
           {t('corps.heading')}
         </motion.h2>
 
-        <Divider glyph="✦" className="mb-14" />
+        <Divider className="mb-14" />
 
         <motion.div
           variants={staggerContainer}
