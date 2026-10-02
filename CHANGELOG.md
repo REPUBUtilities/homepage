@@ -6,6 +6,19 @@ Format follows [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 
 ---
 
+## [Unreleased]
+
+### Changed
+
+- Website now follows The Republic styleguide in the **Republic · Blue** look only (not the joint Republic · Helios look)
+- Replaced the textured logo and Vite favicon with the Republic falcon emblem (`/falcon-republic-blue.png`); navbar and footer carry a falcon + `THE REPUBLIC` lockup
+- Typography: IBM Plex Sans for body copy; Space Mono (uppercase) for eyebrows, nav, buttons and labels; Cinzel 600 for headings, never below 18px
+- Palette: ground `#05070b`, surface `#061428`, rule `#1c2942`, ink `#d9dee8`, muted `#7f8ca3`; ion blue `#0a88cd` only; void purple removed from view
+- Hero: drifting nebula and faint grid replace the photograph; faint falcon watermark; altar-rail divider; motto set as a muted signature line
+- Dividers are now altar rails (hairline with short brand flanks); corner brackets added to the About statistics block
+- Glow limited to the primary call to action; tool pill and other non-seal shapes no longer round
+- Reduced-motion preference respected
+
 ## [2.0.0] — 2026-05-01
 
 ### Overview

@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGaugeHigh, faMap, faBookOpen } from '@fortawesome/free-solid-svg-icons'
 import { faDiscord } from '@fortawesome/free-brands-svg-icons'
-import { NAV_LINKS, TOOL_LINKS, ALLIANCE_NAME } from '../../lib/constants'
+import { NAV_LINKS, TOOL_LINKS, ALLIANCE_NAME, ALLIANCE_MARK } from '../../lib/constants'
 import { useActiveSection } from '../../hooks/useActiveSection'
 import LanguageToggle from '../ui/LanguageToggle'
 
@@ -22,10 +22,10 @@ function NavLink({ href, label, active }) {
       href={href}
       className={[
         'group relative pb-0.5 transition-colors duration-300',
-        active ? 'text-white' : 'text-(--color-light)/50 hover:text-white',
+        active ? 'text-white' : 'text-(--color-muted) hover:text-white',
         'no-underline hover:no-underline',
       ].join(' ')}
-      style={{ fontSize: 'var(--text-xs)', letterSpacing: '0.15em' }}
+      style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.1em' }}
     >
       {label.toUpperCase()}
       <span
@@ -34,7 +34,6 @@ function NavLink({ href, label, active }) {
           'transition-[width] duration-300 ease-out',
           active ? 'w-full' : 'w-0 group-hover:w-full',
         ].join(' ')}
-        style={{ boxShadow: '0 0 6px rgba(10,136,205,0.6)' }}
       />
     </a>
   )
@@ -56,17 +55,19 @@ export default function Navbar() {
       className={[
         'fixed top-0 inset-x-0 z-50 transition-all duration-500',
         scrolled
-          ? 'bg-[rgba(9,9,9,0.85)] backdrop-blur-md border-b border-(--color-border-subtle)'
+          ? 'bg-[rgba(5,7,11,0.85)] backdrop-blur-md border-b border-(--color-border-subtle)'
           : 'bg-transparent',
       ].join(' ')}
     >
       <nav className="mx-auto max-w-300 px-6 h-16 flex items-center justify-between">
-        <a href="#" aria-label={ALLIANCE_NAME}>
-          <img
-            src="/repub-logo.png"
-            alt={ALLIANCE_NAME}
-            className="h-8 w-auto opacity-90 hover:opacity-100 transition-opacity duration-200"
-          />
+        <a href="#" aria-label={ALLIANCE_NAME} className="flex items-center gap-4">
+          <img src={ALLIANCE_MARK} alt="" aria-hidden="true" className="h-9 w-9 object-contain" />
+          <span
+            className="hidden sm:inline text-white uppercase"
+            style={{ fontFamily: 'var(--font-display)', fontWeight: 600, fontSize: 'var(--text-lg)', letterSpacing: '0.15em' }}
+          >
+            {ALLIANCE_NAME}
+          </span>
         </a>
 
         <div className="hidden md:flex items-center gap-8">
@@ -88,7 +89,7 @@ export default function Navbar() {
 
           {/* Tool icons pill */}
           <div
-            className="flex items-center rounded-full border border-(--color-border-subtle) overflow-hidden"
+            className="flex items-center rounded-sm border border-(--color-border-subtle) overflow-hidden"
             style={{ background: 'rgba(247, 247, 247, 0.04)' }}
           >
             {TOOL_LINKS.map(({ label, href }, i) => (
@@ -101,7 +102,7 @@ export default function Navbar() {
                 title={label}
                 className={[
                   'group flex items-center justify-center w-9 h-8',
-                  'text-(--color-light)/30 transition-all duration-200',
+                  'text-(--color-muted) transition-all duration-200',
                   'hover:text-(--color-primary) hover:bg-(--color-primary-dim)',
                   i < TOOL_LINKS.length - 1 ? 'border-r border-(--color-border-subtle)' : '',
                 ].join(' ')}

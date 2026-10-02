@@ -1,5 +1,6 @@
 export const ALLIANCE_NAME = 'The Republic'
 export const ALLIANCE_TAGLINE = 'Futurum Aedificantes'
+export const ALLIANCE_MARK = '/falcon-republic-blue.png'
 
 export const NAV_LINKS = [
   { label: 'About',        href: '#about' },
@@ -12,13 +13,16 @@ export const COLORS = {
   primary:       '#0a88cd',
   accent:        '#c052c3',
   navy:          '#012862',
-  void:          '#090909',
+  void:          '#05070b',
   light:         '#f7f7f7',
+  ink:           '#d9dee8',
+  muted:         '#7f8ca3',
+  plum:          '#240131',
   primaryDim:    'rgba(10, 136, 205, 0.12)',
   accentDim:     'rgba(192, 82, 195, 0.1)',
-  border:        'rgba(10, 136, 205, 0.25)',
-  borderSubtle:  'rgba(247, 247, 247, 0.07)',
-  surface:       'rgba(1, 40, 98, 0.35)',
+  border:        'rgba(10, 136, 205, 0.35)',
+  borderSubtle:  '#1c2942',
+  surface:       '#061428',
 }
 
 export const TOOL_LINKS = [

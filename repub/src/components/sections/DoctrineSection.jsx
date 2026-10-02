@@ -23,8 +23,8 @@ function PillarCard({ pillarKey }) {
       <div
         className={[
           'h-full flex flex-col rounded-sm overflow-hidden',
-          'border border-(--color-border) backdrop-blur-sm bg-(--color-surface)',
-          'transition-all duration-300 hover:border-[rgba(10,136,205,0.5)] hover:-translate-y-0.5',
+          'border border-(--color-border-subtle) backdrop-blur-sm bg-(--color-surface)',
+          'transition-all duration-300 hover:border-(--color-border) hover:-translate-y-0.5',
         ].join(' ')}
       >
         {/* Image header */}
@@ -37,15 +37,15 @@ function PillarCard({ pillarKey }) {
           />
           <div
             className="absolute inset-0"
-            style={{ background: 'linear-gradient(to bottom, rgba(9,9,9,0.15) 0%, rgba(9,9,9,0.60) 100%)' }}
+            style={{ background: 'linear-gradient(to bottom, rgba(5,7,11,0.15) 0%, rgba(5,7,11,0.60) 100%)' }}
           />
         </div>
 
         {/* Content */}
         <div className="p-6 flex flex-col flex-1">
           <p
-            className="text-(--color-accent) mb-3 tracking-widest"
-            style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.2em' }}
+            className="text-(--color-primary) mb-3 tracking-widest"
+            style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.2em' }}
           >
             {t(`doctrine.pillars.${pillarKey}.label`).toUpperCase()}
           </p>
@@ -81,7 +81,7 @@ export default function DoctrineSection() {
         <motion.p
           variants={fadeUp}
           className="text-(--color-primary) tracking-widest mb-4"
-          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.25em' }}
         >
           {t('doctrine.eyebrow')}
         </motion.p>
@@ -94,7 +94,7 @@ export default function DoctrineSection() {
           {t('doctrine.heading')}
         </motion.h2>
 
-        <Divider glyph="✦" className="mb-14" />
+        <Divider className="mb-14" />
 
         <motion.div
           variants={staggerContainer}

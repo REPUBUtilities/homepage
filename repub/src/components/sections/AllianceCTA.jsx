@@ -20,7 +20,7 @@ export default function AllianceCTA() {
         <motion.p
           variants={fadeUp}
           className="text-(--color-primary) mb-4"
-          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-display)', letterSpacing: '0.25em' }}
+          style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-label)', letterSpacing: '0.25em' }}
         >
           {t('cta.eyebrow')}
         </motion.p>

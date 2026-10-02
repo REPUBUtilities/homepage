@@ -1,26 +1,36 @@
 @import "tailwindcss";
 
-/* ── Custom properties ──────────────────────────────────────────────────── */
+/* ── Custom properties — The Republic · Blue look ───────────────────────── */
 
 :root {
   /* Core palette */
-  --color-primary:        #0a88cd;
-  --color-accent:         #c052c3;
+  --color-primary:        #0a88cd; /* ion-blue: marks, rings, rules, fills */
+  --color-accent:         #c052c3; /* void-purple: one per view, never text */
   --color-navy:           #012862;
-  --color-void:           #090909;
-  --color-light:          #f7f7f7;
+  --color-void:           #05070b; /* ground */
+  --color-light:          #f7f7f7; /* ink-strong */
+  --color-ink:            #d9dee8;
+  --color-muted:          #7f8ca3;
+  --color-plum:           #240131; /* the falcon's shadow */
 
   /* Derived tokens */
   --color-primary-dim:    rgba(10, 136, 205, 0.12);
   --color-accent-dim:     rgba(192, 82, 195, 0.1);
-  --color-border:         rgba(10, 136, 205, 0.25);
-  --color-border-subtle:  rgba(247, 247, 247, 0.07);
-  --color-surface:        rgba(1, 40, 98, 0.35);
+  --color-border:         rgba(10, 136, 205, 0.35); /* brand-line */
+  --color-border-subtle:  #1c2942;                  /* rule */
+  --color-surface:        #061428;
+  --color-surface-raised: #0b1f3d;
+
+  /* Nebula */
+  --color-nebula-1:       #123f6f;
+  --color-nebula-2:       #0e3e63;
+  --color-nebula-3:       #0b2a50;
+  --color-nebula-4:       #081e3a;
 
   /* Typography scale */
-  --text-xs:    0.65rem;
+  --text-xs:    0.75rem;
   --text-sm:    0.80rem;
-  --text-base:  0.95rem;
+  --text-base:  1rem;
   --text-lg:    1.15rem;
   --text-xl:    1.50rem;
   --text-2xl:   2.25rem;
@@ -28,9 +38,10 @@
   --text-hero:  clamp(4rem, 8vw, 7rem);
 
   /* Font families */
-  --font-display: 'Cinzel', serif;
-  --font-body:    'Space Mono', monospace;
-  --font-data:    'IBM Plex Mono', monospace;
+  --font-display: 'Cinzel', 'Trajan Pro', Georgia, serif;
+  --font-body:    'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-label:   'Space Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-data:    'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
 }
 
 /* ── Base resets ────────────────────────────────────────────────────────── */
@@ -47,33 +58,44 @@ html {
 
 body {
   background-color: var(--color-void);
-  color: var(--color-light);
+  color: var(--color-ink);
   font-family: var(--font-body);
   font-size: var(--text-base);
-  letter-spacing: 0.05em;
-  line-height: 1.7;
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* ── Typography helpers ─────────────────────────────────────────────────── */
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: 0.15em;
-  line-height: 1.2;
-  color: #ffffff;
-}
+@layer base {
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    line-height: 1.15;
+    color: var(--color-light);
+  }
 
-a {
-  color: var(--color-primary);
-  text-decoration: none;
-}
+  a {
+    color: var(--color-primary);
+    text-decoration: none;
+  }
 
+  button {
+    font-family: var(--font-label);
+  }
+}
 
 code, pre {
   font-family: var(--font-data);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* ── Scrollbar ──────────────────────────────────────────────────────────── */

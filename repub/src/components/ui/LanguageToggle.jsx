@@ -12,22 +12,22 @@ export default function LanguageToggle() {
   return (
     <div
       className="flex items-center gap-1"
-      style={{ fontFamily: 'var(--font-mono)', fontSize: 'var(--text-xs)', letterSpacing: '0.12em' }}
+      style={{ fontFamily: 'var(--font-label)', fontSize: 'var(--text-xs)', letterSpacing: '0.12em' }}
     >
       <button
         onClick={() => setLang('en')}
         className="transition-colors duration-200"
-        style={{ color: current === 'en' ? 'var(--color-primary)' : 'rgba(247,247,247,0.35)' }}
+        style={{ color: current === 'en' ? 'var(--color-primary)' : 'var(--color-muted)' }}
         aria-pressed={current === 'en'}
         aria-label="Switch to English"
       >
         EN
       </button>
-      <span style={{ color: 'rgba(247,247,247,0.2)' }}>·</span>
+      <span style={{ color: 'var(--color-border-subtle)' }}>·</span>
       <button
         onClick={() => setLang('fr')}
         className="transition-colors duration-200"
-        style={{ color: current === 'fr' ? 'var(--color-primary)' : 'rgba(247,247,247,0.35)' }}
+        style={{ color: current === 'fr' ? 'var(--color-primary)' : 'var(--color-muted)' }}
         aria-pressed={current === 'fr'}
         aria-label="Passer en français"
       >

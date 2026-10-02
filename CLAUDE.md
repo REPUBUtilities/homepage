@@ -9,6 +9,15 @@ The site serves as a public-facing presence: identity, recruitment, lore, and fl
 **Deploy target:** Nginx Docker image (self-hosted)  
 **Repo:** https://github.com/REPUBUtilities/homepage
 
+> **Styleguide update (October 2026):** this site uses the **Republic · Blue** look of the shared
+> Republic styleguide, and only that look. Where this file conflicts with the sections below, the
+> summary here wins: body copy is **IBM Plex Sans**; **Space Mono** is for uppercase eyebrows, nav,
+> buttons and badges; Cinzel is 400/600, never below 18px; ground `#05070b`, surface `#061428`,
+> rule `#1c2942`, ink `#d9dee8`, muted `#7f8ca3`, ion blue `#0a88cd` (void purple is not used);
+> the only mark is `/falcon-republic-blue.png`, one per surface (a faint hero watermark is allowed);
+> the motto *Futurum Aedificantes* is a muted Space Mono signature line; glow appears once, on the
+> primary CTA; the joint (purple falcon) and Helios (red) looks must never appear on this site.
+
 ---
 
 ## Design Philosophy

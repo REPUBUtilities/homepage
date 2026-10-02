@@ -1,27 +1,19 @@
 import { motion } from 'framer-motion'
 import { revealLine } from '../../lib/variants'
 
-export default function Divider({ glyph = null, className = '' }) {
+/* Altar-rail divider: one hairline flanked by two short brand lines */
+export default function Divider({ className = '' }) {
   return (
-    <div className={`flex items-center gap-4 ${className}`}>
+    <div className={`flex items-center gap-3 ${className}`} aria-hidden="true">
+      <span className="w-7 h-px bg-(--color-primary)" />
       <motion.div
-        className="flex-1 h-px bg-(--color-border)"
+        className="flex-1 h-px bg-(--color-border-subtle)"
         variants={revealLine}
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
       />
-      {glyph && (
-        <span className="text-(--color-accent) opacity-40 text-sm">{glyph}</span>
-      )}
-      <motion.div
-        className="flex-1 h-px bg-(--color-border)"
-        variants={revealLine}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-        style={{ originX: 1 }}
-      />
+      <span className="w-7 h-px bg-(--color-primary)" />
     </div>
   )
 }

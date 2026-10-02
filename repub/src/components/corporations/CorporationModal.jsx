@@ -48,8 +48,8 @@ export default function CorporationModal({ corp, onClose }) {
       <motion.div
         className={[
           'relative z-201 w-full max-w-lg rounded-sm',
-          'border border-(--color-border) bg-[rgba(9,9,9,0.92)] backdrop-blur-md',
-          'shadow-[0_0_60px_rgba(10,136,205,0.12)]',
+          'border border-(--color-border) bg-[rgba(5,7,11,0.94)] backdrop-blur-md',
+          'shadow-none',
           'overflow-hidden',
         ].join(' ')}
         variants={modalPanel}
@@ -64,7 +64,7 @@ export default function CorporationModal({ corp, onClose }) {
           <div className="shrink-0 w-14 h-14 rounded-sm overflow-hidden border border-(--color-border-subtle)">
             {logoError ? (
               <div className="w-full h-full bg-(--color-primary-dim) flex items-center justify-center">
-                <span className="text-(--color-primary) opacity-30 text-xl">✦</span>
+                <span className="text-(--color-primary) text-xl">✦</span>
               </div>
             ) : (
               <img
@@ -84,7 +84,7 @@ export default function CorporationModal({ corp, onClose }) {
               {corp.name}
             </h2>
             <p
-              className="mt-1 text-(--color-light)/45"
+              className="mt-1 text-(--color-muted)"
               style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.1em' }}
             >
               [{corp.ticker}] · {role}
@@ -95,7 +95,7 @@ export default function CorporationModal({ corp, onClose }) {
           <button
             ref={closeRef}
             onClick={onClose}
-            className="shrink-0 w-8 h-8 flex items-center justify-center text-(--color-light)/40 hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-(--color-border)"
+            className="shrink-0 w-8 h-8 flex items-center justify-center text-(--color-muted) hover:text-white transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-(--color-border)"
             aria-label="Close"
           >
             <FontAwesomeIcon icon={faXmark} />
@@ -109,7 +109,7 @@ export default function CorporationModal({ corp, onClose }) {
             <div className="shrink-0 w-14 h-14 rounded-full overflow-hidden border border-(--color-border-subtle)">
               {portraitError ? (
                 <div className="w-full h-full bg-(--color-primary-dim) flex items-center justify-center rounded-full">
-                  <span className="text-(--color-primary) opacity-30 text-lg">✦</span>
+                  <span className="text-(--color-primary) text-lg">✦</span>
                 </div>
               ) : (
                 <img
@@ -123,12 +123,12 @@ export default function CorporationModal({ corp, onClose }) {
             <div>
               <p
                 className="text-white"
-                style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-sm)', letterSpacing: '0.1em' }}
+                style={{ fontFamily: 'var(--font-display)', fontSize: 'var(--text-lg)', letterSpacing: '0.08em' }}
               >
                 {corp.ceoName}
               </p>
               <p
-                className="text-(--color-light)/40 mt-0.5"
+                className="text-(--color-muted) mt-0.5"
                 style={{ fontSize: 'var(--text-xs)', fontFamily: 'var(--font-data)', letterSpacing: '0.08em' }}
               >
                 {t('corps.ceo_title')} · {corp.memberCount.toLocaleString()} {t('corps.members')}
@@ -154,7 +154,7 @@ export default function CorporationModal({ corp, onClose }) {
               'px-3 py-1 rounded-sm border text-[10px] tracking-widest uppercase',
               corp.recruiting
                 ? 'border-(--color-border) text-(--color-primary) bg-(--color-primary-dim)'
-                : 'border-[rgba(192,82,195,0.3)] text-(--color-accent) bg-(--color-accent-dim)',
+                : 'border-(--color-border-subtle) text-(--color-muted) bg-transparent',
             ].join(' ')}
           >
             {corp.recruiting ? t('corps.recruiting') : t('corps.not_recruiting')}
